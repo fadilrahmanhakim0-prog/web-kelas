@@ -231,119 +231,12 @@
         justify-content: space-between;  
         color: #d1d5db;  
     }  
-body{
-    scroll-behavior:smooth;
-}
-body{
-    background:
-    radial-gradient(circle at 20% 20%, rgba(0,255,255,.15), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(0,100,255,.15), transparent 30%),
-    radial-gradient(circle at 50% 80%, rgba(0,255,120,.08), transparent 40%),
-    #05070e;
-
-    color:white;
-    overflow-x:hidden;
-}
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-
-    background-image:
-    linear-gradient(rgba(0,255,255,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,255,.05) 1px, transparent 1px);
-
-    background-size:50px 50px;
-
-    animation:gridMove 12s linear infinite;
-
-    z-index:-2;
-}
-@keyframes gridMove{
-
-0%{
-transform:translateY(0);
-}
-
-100%{
-transform:translateY(50px);
-}
-
-}
-.card{
-
-position:relative;
-overflow:hidden;
-
-}
-.card::before{
-
-content:"";
-
-position:absolute;
-
-top:-100%;
-left:-100%;
-
-width:200%;
-height:200%;
-
-background:linear-gradient(
-45deg,
-transparent,
-rgba(0,255,255,.18),
-transparent
-);
-
-transform:rotate(30deg);
-
-transition:.8s;
-
-}
-.card:hover::before{
-
-top:100%;
-left:100%;
-
-}
 
     .schedule-list li span {  
         color: #00f2fe;  
         font-weight: 600;  
     }  
-"interactivity": {
-  "detect_on": "canvas",
-  "events": {
-    "onhover": {
-      "enable": true,
-      "mode": ["grab", "bubble"]
-    },
-    "onclick": {
-      "enable": true,
-      "mode": "repulse"
-    },
-    "resize": true
-  },
-  "modes": {
-    "grab": {
-      "distance": 220,
-      "line_linked": {
-        "opacity": 1
-      }
-    },
-    "bubble": {
-      "distance": 180,
-      "size": 8,
-      "duration": 2,
-      "opacity": 1
-    },
-    "repulse": {
-      "distance": 250,
-      "duration": 0.8
-    }
-  }
-}
-    }
+
     /* Footer */  
     footer {  
         text-align: center;  
@@ -406,151 +299,6 @@ left:100%;
             <p>Memanfaatkan teknologi terdepan dalam proses pembelajaran dan kolaborasi sains harian.</p>  
         </div>  
     </div>  
-    <section class="container" id="absen">
-
-<h2 class="section-title">Daftar Absen Siswa 7H</h2>
-
-<div class="card">
-
-<ol class="schedule-list">
-
-<li>1. Ade Khalimatussa'diyyah</li>
-<li>2. Aditya Rizky Pratama</li>
-<li>3. Afika Khofifatun Nisa</li>
-<li>4. Agus Nadin Haryanto</li>
-<li>5. Ahmad Falah Fadhilaht</li>
-<li>6. Alfian Fikri Firmana</li>
-<li>7. Alfin Mubarok</li>
-<li>8. Alifah Nur Khasanah</li>
-<li>9. Anas Abdurrohman</li>
-<li>10. Arifin Farhan Raif</li>
-<li>11. Arsya Rosita Raharjo</li>
-<li>12. Azahra Marsya Angelita</li>
-<li>13. Azizah Nazyla Rakhma</li>
-<li>14. Azka Al Nafis</li>
-<li>15. Azka Nur Wahid</li>
-<li>16. Daffa Zainul Arifin</li>
-<li>17. Daffina Talitha Zahra</li>
-<li>18. Dion Mukhamad Fakhri</li>
-<li>19. Fadil Rakhman Hakim</li>
-<li>20. Farhan Al Farizi</li>
-<li>21. Hanna Karunia Maharani</li>
-<li>22. Izza Fathul Khoiroh</li>
-<li>23. Nadzwa Sidqia Azzahra</li>
-<li>24. Novita Fitri Rahmadani</li>
-<li>25. Raffa Erlangga Faris</li>
-<li>26. Raisya Khayla Azzahra</li>
-<li>27. Rizka Indra Prasetya</li>
-<li>28. Rofifatu Rifda</li>
-<li>29. Salwa Azzahra</li>
-<li>30. Sofika Khoerunisa Azahra</li>
-<li>31. Yumna Nadhifa Nu'ma</li>
-<li>32. Zulfikar Khairun Nizzam Heri Alfatih</li>
-
-</ol>
-
-</div>
-
-</section>
-
-        <!-- Seksi -->
-        <div class="card">
-            <i class="fa-solid fa-users card-icon"></i>
-            <h3>Seksi Kelas</h3>
-
-            <ul class="schedule-list">
-
-                <li>
-                    <span>📚 Literasi</span>
-                    <div>
-                        Azizah Nazyla Rakhma<br>
-                        Nadzwa Sidqia Azzahra
-                    </div>
-                </li>
-
-                <li>
-                    <span>🧹 Kebersihan</span>
-                    <div>
-                        Alifah Nur Khasanah<br>
-                        Zulfikar Khairun Nizzam Heri Alfatih<br>
-                        Raisya Khayla Azzahra
-                    </div>
-                </li>
-
-                <li>
-                    <span>🤝 Adab & Akhlak</span>
-                    <div>
-                        Salwa Azzahra<br>
-                        Azka Al Nafis<br>
-                        Ade Khalimatussa'diyyah
-                    </div>
-                </li>
-
-                <li>
-                    <span>🏥 Kesehatan</span>
-                    <div>
-                        Agus Nadin Haryanto<br>
-                        Hanna Karunia Maharani<br>
-                        Alfian Fikri Firmana
-                    </div>
-                </li>
-
-                <li>
-                    <span>🛡 Anti Perundungan</span>
-                    <div>
-                        Azka Nur Wahid<br>
-                        Arsya Rosita Raharjo<br>
-                        Alfin Mubarok
-                    </div>
-                </li>
-
-                <li>
-                    <span>🕌 Keagamaan</span>
-                    <div>
-                        Daffa Zainul Arifin<br>
-                        Izza Fathul Khoiroh
-                    </div>
-                </li>
-
-                <li>
-                    <span>📏 Disiplin</span>
-                    <div>
-                        Ahmad Falah Fadhilaht<br>
-                        Daffina Talitha Zahra<br>
-                        Rizka Indra Prasetya
-                    </div>
-                </li>
-
-                <li>
-                    <span>🪑 Perlengkapan</span>
-                    <div>
-                        Anas Abdurrohman<br>
-                        Aditya Rizky Pratama<br>
-                        Afika Khofifatun Nisa
-                    </div>
-                </li>
-
-                <li>
-                    <span>🔐 Keamanan</span>
-                    <div>
-                        Raffa Erlangga Faris<br>
-                        Farhan Al Farizi
-                    </div>
-                </li>
-
-                <li>
-                    <span>🏆 Prestasi</span>
-                    <div>
-                        Dion Mukhamad Fakhri<br>
-                        Rofifatu Rifda
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-
-    </div>
-</section>
 </section>  
 
 <!-- Pengurus & Wali Kelas -->  
@@ -571,35 +319,12 @@ left:100%;
         </div>  
         <div class="card profile-card">  
             <div class="profile-img"><i class="fa-solid fa-user-gear"></i></div>  
-            <h3>Yumna Nadhifa Nu'ma<</h3>  
+            <h3>Lupa</h3>  
             <p style="color: #00f2fe; margin-bottom: 0.5rem;">Wakil Ketua Kelas</p>  
             <p>Membantu operasional kelas dan pelaksanaan program harian.</p>  
         </div>  
     </div>  
-<section class="container" id="pengurus">
-    <h2 class="section-title">Struktur Kelas 7H</h2>
-
-    <div class="grid-cards">
-
-        <!-- Wali Kelas -->
-        <div class="card">
-            <i class="fa-solid fa-user-tie card-icon"></i>
-            <h3>Wali Kelas</h3>
-            <p><b>Umi Nur Ngatiqoh, S.Pd</b></p>
-        </div>
-
-        <!-- Pengurus Inti -->
-        <div class="card">
-            <i class="fa-solid fa-crown card-icon"></i>
-            <h3>Pengurus Inti</h3>
-
-            <p><b>Ketua :</b> Fadil Rakhman Hakim</p>
-            <p><b>Wakil Ketua :</b> Yumna Nadhifa Nu'ma</p>
-            <p><b>Sekretaris :</b> Azahra Marsya Angelita</p>
-            <p><b>Wakil Sekretaris :</b> Arifin Farhan Raif</p>
-            <p><b>Bendahara :</b> Novita Fitri Rahmadani</p>
-            <p><b>Wakil Bendahara :</b> Sofika Khoerunisa Azahra</p>
-        </div>
+</section>  
             </ul>  
         </div>  
         <div class="card">  
@@ -669,4 +394,4 @@ left:100%;
 </script>
 
 </body>  
-                           </html>
+</html>  
