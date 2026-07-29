@@ -231,12 +231,119 @@
         justify-content: space-between;  
         color: #d1d5db;  
     }  
+body{
+    scroll-behavior:smooth;
+}
+body{
+    background:
+    radial-gradient(circle at 20% 20%, rgba(0,255,255,.15), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(0,100,255,.15), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(0,255,120,.08), transparent 40%),
+    #05070e;
+
+    color:white;
+    overflow-x:hidden;
+}
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(0,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,.05) 1px, transparent 1px);
+
+    background-size:50px 50px;
+
+    animation:gridMove 12s linear infinite;
+
+    z-index:-2;
+}
+@keyframes gridMove{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(50px);
+}
+
+}
+.card{
+
+position:relative;
+overflow:hidden;
+
+}
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-100%;
+left:-100%;
+
+width:200%;
+height:200%;
+
+background:linear-gradient(
+45deg,
+transparent,
+rgba(0,255,255,.18),
+transparent
+);
+
+transform:rotate(30deg);
+
+transition:.8s;
+
+}
+.card:hover::before{
+
+top:100%;
+left:100%;
+
+}
 
     .schedule-list li span {  
         color: #00f2fe;  
         font-weight: 600;  
     }  
-
+"interactivity": {
+  "detect_on": "canvas",
+  "events": {
+    "onhover": {
+      "enable": true,
+      "mode": ["grab", "bubble"]
+    },
+    "onclick": {
+      "enable": true,
+      "mode": "repulse"
+    },
+    "resize": true
+  },
+  "modes": {
+    "grab": {
+      "distance": 220,
+      "line_linked": {
+        "opacity": 1
+      }
+    },
+    "bubble": {
+      "distance": 180,
+      "size": 8,
+      "duration": 2,
+      "opacity": 1
+    },
+    "repulse": {
+      "distance": 250,
+      "duration": 0.8
+    }
+  }
+}
+    }
     /* Footer */  
     footer {  
         text-align: center;  
@@ -562,5 +669,4 @@
 </script>
 
 </body>  
-</html>   
-    
+                           </html>
