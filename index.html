@@ -511,15 +511,6 @@
 
 <!-- Particles.js Script untuk Animasi Background Sains -->  
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>  
-    <button onclick="tanyaAI()">🤖 AI Kelas</button>
-
-<script>
-async function tanyaAI() {
-    const res = await fetch("/ai");
-    const text = await res.text();
-    alert(text);
-}
-</script>
 <script>  
     particlesJS("particles-js", {  
         "particles": {  
