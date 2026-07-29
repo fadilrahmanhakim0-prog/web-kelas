@@ -77,3 +77,12 @@ hasil.pack(pady=10)
 tampilkan()
 
 root.mainloop()
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/ai")
+def ai():
+    return "Halo! Saya AI Kelas 7H."
+
+app.run(host="0.0.0.0", port=5000)
