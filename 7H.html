@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas 7H KPS - MTs Negeri 6 Kebumen</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0b0d17;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Canvas Background Sains Overlay */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #101628 0%, #05070e 100%);
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 8%;
+            background: rgba(11, 13, 23, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00f2fe;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: #4facfe;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00f2fe;
+            text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .badge-sains {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid #00f2fe;
+            border-radius: 50px;
+            color: #00f2fe;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #4facfe 50%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            max-width: 650px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn-main {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            color: #05070e;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
+        }
+
+        /* Section Global Layout */
+        .container {
+            padding: 5rem 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #00f2fe;
+            margin: 10px auto 0;
+            border-radius: 2px;
+            box-shadow: 0 0 10px #00f2fe;
+        }
+
+        /* Glassmorphism Cards Container */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+        }
+
+        .card i.card-icon {
+            font-size: 2.5rem;
+            color: #00f2fe;
+            margin-bottom: 1.2rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Struktur Organisasi / Wali Kelas */
+        .profile-card {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #00f2fe;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 242, 254, 0.1);
+            font-size: 2.5rem;
+            color: #4facfe;
+        }
+
+        /* Jadwal List Styling */
+        .schedule-list {
+            list-style: none;
+        }
+
+        .schedule-list li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            color: #d1d5db;
+        }
+
+        .schedule-list li span {
+            color: #00f2fe;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(5, 7, 14, 0.9);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive UI */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <i class="fa-solid fa-atom"></i> 7H KPS (kelas prestasi sains)
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#keunggulan">Keunggulan</a></li>
+            <li><a href="#pengurus">Struktur</a></li>
+            <li><a href="#prestasi">Prestasi</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="badge-sains"><i class="fa-solid fa-microscope"></i> Kelas Prestasi Sains</div>
+        <h1>WELCOME TO CLASS 7H</h1>
+        <p>Generasi Pembawa Perubahan, Peneliti Muda, dan Pelopor Sains MTs Negeri 6 Kebumen.</p>
+        <a href="#keunggulan" class="btn-main">Jelajahi Kelas Kami <i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section class="container" id="keunggulan">
+        <h2 class="section-title">Pilar Keunggulan 7H</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <i class="fa-solid fa-flask-vial card-icon"></i>
+                <h3>Eksperimen & Riset</h3>
+                <p>Mengembangkan pemikiran kritis lewat pembelajaran berbasis praktik laboratorium dan riset ilmiah dasar.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-brain card-icon"></i>
+                <h3>Olimpiade Ready</h3>
+                <p>Mempersiapkan siswa-siswi terbaik untuk bersaing di Kompetisi Sains Nasional (KSN) serta ajang sains lainnya.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-dna card-icon"></i>
+                <h3>Inovasi Digital</h3>
+                <p>Memanfaatkan teknologi terdepan dalam proses pembelajaran dan kolaborasi sains harian.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengurus & Wali Kelas -->
+    <section class="container" id="pengurus">
+        <h2 class="section-title">Pengurus Kelas</h2>
+        <div class="grid-cards">
+            <div class="card profile-card">
+                <div class="profile-img"><i class="fa-solid fa-user-tie"></i></div>
+                <h3>Umi Nur ngatikoh</h3>
+                <p style="color: #00f2fe; margin-bottom: 0.5rem;">Wali Kelas 7H</p>
+                <p>Pembimbing dan pengarah kegiatan akademik serta karakter kelas KPS.</p>
+            </div>
+            <div class="card profile-card">
+                <div class="profile-img"><i class="fa-solid fa-user-graduate"></i></div>
+                <h3>Fadil Rakhman Hakim</h3>
+                <p style="color: #00f2fe; margin-bottom: 0.5rem;">Ketua Kelas</p>
+                <p>Mengoordinasikan kekompakan, disiplin, dan kegiatan siswa-siswi 7H.</p>
+            </div>
+            <div class="card profile-card">
+                <div class="profile-img"><i class="fa-solid fa-user-gear"></i></div>
+                <h3>Lupa</h3>
+                <p style="color: #00f2fe; margin-bottom: 0.5rem;">Wakil Ketua Kelas</p>
+                <p>Membantu operasional kelas dan pelaksanaan program harian.</p>
+            </div>
+        </div>
+    </section>
+                </ul>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-atom card-icon"></i>
+                <h3>Motto Sains 7H</h3>
+                <blockquote style="color: #d1d5db; font-style: italic; margin-top: 1rem; border-left: 3px solid #00f2fe; padding-left: 1rem;">
+                    "Sains bukan hanya tentang menghafal rumus, melainkan cara kita memahami rahasia alam semesta."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Kelas 7H KPS - MTs Negeri 6 Kebumen. All Rights Reserved.@ Fadil Rakhman Hakim</p>
+    </footer>
+
+    <!-- Particles.js Script untuk Animasi Background Sains -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 85,
+                    "density": { "enable": true, "value_area": 800 }
+                },
+                "color": { "value": "#00f2fe" },
+                "shape": { "type": "circle" },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#4facfe",
+                    "opacity": 0.3,
+                    "width": 1.2
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 0.8 } }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+  </html>
